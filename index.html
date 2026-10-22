@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <!-- viewport-fit=cover deja que la app use toda la pantalla del iPhone (notch y barra inferior);
+       los márgenes seguros se respetan en CSS con env(safe-area-inset-*). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Finax</title>
+  <meta name="description" content="Tus gastos, ingresos y metas de ahorro, en tu iPhone.">
+
+  <!-- Hace que, al agregarla a la pantalla de inicio, abra como app (sin barra de Safari). -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Finax">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#F1F2F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0E1117" media="(prefers-color-scheme: dark)">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <main id="vista" class="vista" tabindex="-1"></main>
+
+  <!-- Barra de pestañas flotante + botón para registrar (el gesto más frecuente). -->
+  <nav class="dock" aria-label="Secciones">
+    <div class="pestanas">
+      <button class="pestana" data-tab="inicio" aria-label="Inicio"></button>
+      <button class="pestana" data-tab="movimientos" aria-label="Movimientos"></button>
+      <button class="pestana" data-tab="analisis" aria-label="Análisis"></button>
+      <button class="pestana" data-tab="metas" aria-label="Metas"></button>
+    </div>
+    <button class="boton-agregar" data-accion="agregar" aria-label="Registrar movimiento"></button>
+  </nav>
+
+  <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+  <div id="tip" class="tip" role="tooltip"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
